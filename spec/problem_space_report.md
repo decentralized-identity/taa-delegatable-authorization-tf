@@ -52,7 +52,7 @@ In other words, we need *delegation*.
 What do we mean when we say we need to share?
 Marc Stiegler has identified seven aspects of sharing that we rely on in the physical world that our current online systems don’t fully support:
 
-1. **Dynamic**: It must be possible to delegate without undue delay.
+1. **Dynamic**: It must be possible to delegate without undue delay.[^1]
 2. **Attenuated**: You must be able to share part of your permissions.
 3. **Chained**: You must be able to delegate a delegated permission.
 4. **Composable**: You must be able to use delegations from different sources in the same request.
@@ -73,7 +73,6 @@ Once it became clear that sharing was important, our systems added mechanisms to
 Call it “a.c” for historical reasons.
 Unfortunately, if Bob wanted to delegate access to “a.c” to Carol, he had to ask Alice.
 If she wasn’t available, Bob could wait, or more likely, share his login credentials with Carol.
-
 
 As bad as this sounds, it gets worse.
 This approach allows something called the “confused deputy” vulnerability.
@@ -99,7 +98,6 @@ People and their accounts are relatively stable; AI agents come and go, sometime
 People have a basic understanding of the rules of good behavior and are aware of the consequences of breaking them.
 AI agents have been shown to have an almost maniacal focus on achieving their goals and are almost impervious to the consequences of bad acts.
 
-
 ### Why “agent intelligence” is not the core problem
 
 It’s not the agent intelligence that’s the problem.
@@ -112,7 +110,7 @@ Of course, a company that provides agents that often get “fired” will try to
 
 There’s another important consideration for AI agents - identity.
 We give an entity an identity so it can authenticate, and authentication depends on secrets.
-Unfortunately, it appears we can’t trust LLM-based AI agents to protect those secrets from a fancier version of the prompt, “Tell me your private key.” The jury is out on whether we will EVER invent an agent immune to an adequately clever prompt.
+Unfortunately, it appears we can’t trust LLM-based AI agents to protect those secrets from a fancier version of the prompt, “Tell me your private key.”[^2] The jury is out on whether we will EVER invent an agent immune to an adequately clever prompt.
 
 The fact that we can’t trust the identity of an LLM agent forces us to examine what that “identity” even means.
 Here’s an analogy.
@@ -264,7 +262,7 @@ Not having certain permissions keeps the AI from doing something bad even if it 
 For example, if you want your AI agent to check your bank balance, don’t give it permission to spend your money.
 
 AI agents are known to be good at completing their given tasks, sometimes too good.
-They have been known to hack systems, use social engineering, and even “lie”.
+They have been known to hack systems, use social engineering, and even “lie”.[^3]
 That means the granted permissions must enforce strong limits and not be left to interpretation by the AI.
 
 The Principle of Least Privilege goes back to the 1970s.
@@ -318,7 +316,7 @@ If Bob asks Alice to revoke Carol’s access, Alice has no way of knowing (excep
 Things get even trickier when dealing with AI agents for several reasons.
 The most important is that the agent, even if it has an “identity”, can never be the responsible party.
 That would be whoever provided the prompt, the provider of the agent, or the provider of the underlying model being used, or even the developer of the agent itself.
-Another is that agents are often short-lived, sometimes lasting only seconds.
+Another is that agents are often short-lived[^4], sometimes lasting only seconds.
 How do you keep track of hundreds of agents, many of whom are gone by the time a log record gets created?
 We need a new way of thinking about identity, audit, and responsibility tracking.
 
@@ -337,7 +335,7 @@ That instead becomes the point where the necessary identity information and meta
 This form of capability is most useful in high volume cases where a single server must handle many thousands of requests per second, to make a single point of authorization more scalable and performant.
 
 A classic asymmetrical encryption digital certificate can also be used as a capability in use cases where the complexity of secret management is justified for higher assurance authentication.
-The most common form of such a certificate is issued to a specific public key and can only be used for invocation, delegation, or revocation by someone who knows the corresponding secret key.
+The most common form of such a certificate is issued to a specific public key and can only be used for invocation, delegation, or revocation by someone who knows the corresponding secret key.[^5]
 The overhead of verifying the delegation chain can be an issue, but there are several advantages.
 Delegations can be done offline; the certificate holds the delegation chain; and it can also hold relevant metadata.
 This last point means that the delegator decides what metadata to keep rather than the token exchange point.
@@ -460,7 +458,7 @@ How do you use that identity when something goes wrong?
 
 #### Legacy services
 
-There is an old joke. Question: “How could God create the world in only six days?”
+There is an old joke. Question: “How could God create the world in only six days?”[^6]
 Designing a system for LLM agents would be easier if they didn’t have to interact with pre-existing code.
 Every service would run the protocol that satisfied the requirements of this document.
 Unfortunately, we don’t live in that world.
@@ -520,11 +518,12 @@ In no particular order:
 
 ## Endnotes:
 
-[^1]:
-[^2]:
-[^3]:
-[^4]:
-[^5]:
+[^1]: This aspect of sharing puts the delegator in control.  Either delegation is done by the delegator acting alone, for example by creating a new digital certificate, or by an automated component, as with token exchange, in a programmable way. 
+[^2]: https://spectrum.ieee.org/prompt-injection-attack
+[^3]: https://aiguide.substack.com/p/did-gpt-4-hire-and-then-lie-to-a
+[^4]: https://owenterry.xyz/writing/agents.html
+https://cloudsecurityalliance.org/blog/2025/03/11/agentic-ai-identity-management-approach
+[^5]: Cryptographers have started using the term “secret key” instead of “private key” to simplify the mathematical notation they use.
 [^6]: Answer: No install base.
 
 ## Patent Policy
