@@ -111,10 +111,6 @@ People and their accounts are relatively stable; AI agents come and go, sometime
 People have a basic understanding of the rules of good behavior and are aware of the consequences of breaking them.
 AI agents have been shown to have an almost maniacal focus on achieving their goals and are almost impervious to the consequences of bad acts.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> initial copy over from gdrive
 ### Why “agent intelligence” is not the core problem
 
 It’s not the agent intelligence that’s the problem.
