@@ -27,6 +27,8 @@ Except where otherwise noted, this work by the [Decentralized Identity Foundatio
 
 ## Abstract
 
+add text here
+
 ## Status of This Document
 
 This is a draft specification being developed within the
