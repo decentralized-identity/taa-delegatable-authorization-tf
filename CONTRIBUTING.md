@@ -17,6 +17,8 @@ Before you contribute, there are a few important steps you need to follow:
 
 ## How to Contribute
 
+Issues discussed and approved-for-PRs before starting a PR, please!
+
 ### Reporting Issues
 
 Please follow these guidelines for reporting bugs:
