@@ -10,7 +10,7 @@
       "source": {
         "host": "github",
         "account": "decentralized-identity",
-        "repo": "taa-delegatable-authorization-rf",
+        "repo": "delegated-authority-report",
         "branch": "main",
         "path": "spec"
       }

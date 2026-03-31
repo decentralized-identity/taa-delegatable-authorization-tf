@@ -3,7 +3,7 @@
 **Specification Status:** Pre-Draft
 
 **Latest Draft:**
-[github.com/decentralized-identity/taa-delegatable-authorization-tf/spec/problem_space_report.md](https://github.com/decentralized-identity/taa-delegatable-authorization-tf/spec/problem_space_report.md)
+[identity.foundation/delegated-authority-report](https://identity.foundation/delegated-authority-report)
 
 **Ratified Versions:**
 
@@ -22,6 +22,7 @@
 ~ [GitHub repo](https://github.com/decentralized-identity/taa-delegatable-authorization-tf)
 ~ [File a bug](https://github.com/decentralized-identity/taa-delegatable-authorization-tf/issues)
 ~ [Commit history](https://github.com/decentralized-identity/taa-delegatable-authorization-tf/commits/main)
+~ [Working Group](https://identity.foundation/working-groups/trusted-agents.html)
 
 Except where otherwise noted, this work by the [Decentralized Identity Foundation](https://identity.foundation/) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0).
 
